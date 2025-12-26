@@ -1,0 +1,15 @@
+[Unit]
+Description=Qapsula Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/home/ubuntu/qapsula_gpt
+Environment="PATH=/home/ubuntu/qapsula_gpt/venv/bin"
+ExecStart=/home/ubuntu/qapsula_gpt/venv/bin/python /home/ubuntu/qapsula_gpt/app.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
